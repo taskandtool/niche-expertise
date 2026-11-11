@@ -140,21 +140,19 @@ export function whatsNew(d: Data) {
 }
 
 export function about(d: Data) {
-  const page: Page = { path: "/about", title: `About ${site.name}`, description: "Where our information comes from, how companies are listed and how to correct a listing." };
+  const page: Page = { path: "/about", title: `About ${site.name}`, description: "How we choose and list companies, and how a business can correct its listing." };
   const Body = () => (
     <>
       <PageHead page={page} lede={site.niche ? `Independent recommendations for ${site.niche}${site.area ? ` in ${site.area}` : ""}.` : undefined} />
       <Band>
         <div class="prose max-w-content">
-          <h2>Where our information comes from</h2>
-          <p>Each company's page draws on its website, social profiles, running ads, Google listing and customer reviews. Businesses are found through Overture Maps, whose area boundaries are © OpenStreetMap contributors and available under the Open Database License. The maps use OpenFreeMap with OpenStreetMap data.</p>
-          <h2>What we don't verify</h2>
-          <p>We haven't checked these claims, and a company's own terms decide what its guarantee or offer covers. Please confirm the details with the company before you hire them.</p>
           <h2>How companies are listed</h2>
-          <p>The best-of lists for each area and service put companies based there first, then rank by Google rating, weighted toward companies with more reviews; a rating counts once it has {d.stats.method.reviews} reviews. Every other list shows companies with a current offer first, then the rest, each by name, unless you choose another sort. Nobody pays for a place. Ratings are each platform's own, and we keep no score of our own. Data as of {day(d.stats.built) || "the last build"}.</p>
-          <p>Nothing here is paid placement.{site.disclosure ? ` ${site.disclosure}` : ""}</p>
+          <p>Best-of lists put companies based in the area first, then rank by Google rating, favouring companies with more reviews. Other lists show current offers first. Nobody pays for a place.{site.disclosure ? ` ${site.disclosure}` : ""} Updated {day(d.stats.built) || "with each build"}.</p>
+          <h2>Before you hire</h2>
+          <p>Every page comes from what the company publishes and what its customers say. Guarantees and offers are each company's own, so check the details with them before you hire.</p>
           <h2>Claim or correct a listing</h2>
           <p>Businesses can <a href="/contact">claim a listing, ask for a correction or a removal, or have a picture taken down</a>.{site.contactEmail ? <> Or write to <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</> : null}</p>
+          <p class="text-label text-ink-2">Business locations from Overture Maps. Boundaries and map data © OpenStreetMap contributors, under the Open Database License; maps by OpenFreeMap.</p>
         </div>
       </Band>
     </>
