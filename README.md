@@ -25,6 +25,14 @@ Anything that costs money waits for your yes.
 Connections, none required: Google Places, ScrapeCreators and DataForSEO. Each has its own terms,
 which you accept when you connect it.
 
+## Off Task & Tool
+
+`npm install && npm run dev` serves the site, and `npm run build` writes `dist/` and
+`build/worker.mjs` (`wrangler.jsonc` deploys them to your own Cloudflare account). Set `DATABASE_URL`
+to a Neon database for the contact form; without it the form page says where to write instead.
+Gathering what the guides are built from, the pictures and the scheduled runs are Task & Tool's: they
+call the connections above through its gateway and run from its scheduler.
+
 ## Developing
 
 `npm test` runs the scripts' tests. `npm run dev` serves on localhost:3000.
