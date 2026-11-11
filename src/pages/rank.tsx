@@ -19,7 +19,7 @@ const ratingText = (c: Company) => {
 const asLength = (length: string) => title(lengthWord(length));
 
 export function standoutText(s: Standout): string {
-  if (s.kind === "longer-guarantee") return `${asLength(s.length)} ${s.guarantee} guarantee, where most here offer ${s.standard}`;
+  if (s.kind === "longer-guarantee") return `${asLength(s.length)} ${s.guarantee} guarantee (most offer ${s.standard})`;
   if (s.kind === "rare-guarantee") return `One of ${s.count} companies here with a ${s.guarantee} guarantee`;
   if (s.kind === "most-reviewed") return `Most Google reviews here: ${s.count.toLocaleString("en-US")}`;
   if (s.kind === "years") return `In business ${s.years} years`;
@@ -78,13 +78,15 @@ export function ComparisonTable({ companies, label }: { companies: Company[]; la
   );
 }
 
-/** The ranked list itself: place, name, rating, one reason and one honest gap. */
+/** The ranked list itself: place, name, rating, one reason and one honest gap. A gap most of
+ * the list shares tells the reader nothing about this company, so it isn't shown. */
 export function RankedList({ companies, floor }: { companies: Company[]; floor: number }) {
+  const common = new Set(["no-prices", "no-guarantee", "no-rating"].filter((g) => companies.filter((c) => c.gaps.includes(g as Company["gaps"][number])).length > companies.length / 2));
   return (
     <ol class="grid gap-3">
       {companies.map((c, i) => {
         const why = c.standouts[0];
-        const gap = c.gaps[0];
+        const gap = c.gaps.find((g) => !common.has(g));
         const cities = [...new Set(c.locations.map((l) => l.city).filter(Boolean))].join(", ");
         return (
           <li class="relative flex gap-4 rounded-card border border-line bg-surface p-4 shadow-card sm:p-5">
@@ -104,8 +106,8 @@ export function RankedList({ companies, floor }: { companies: Company[]; floor: 
 }
 
 const MethodLine = ({ area, count, floor, updated }: { area?: string; count: number; floor: number; updated: string }) => (
-  <p class="mt-4 max-w-content text-label text-ink-3">
-    How this is ranked: {area ? `companies based in ${area} first, then ` : ""}by Google rating, weighted toward companies with more reviews, counted from {floor} reviews. {plural(count, "company", "companies")} compared. Updated {month(updated)}.
+  <p class="mt-4 max-w-content text-ink-2">
+    How we rank: {area ? `companies based in ${area} come first, then the best Google ratings.` : "the best Google ratings first."} A rating counts once it has {floor} reviews, and more reviews count for more. {plural(count, "company", "companies")} compared. Updated {month(updated)}.
   </p>
 );
 
@@ -113,14 +115,14 @@ const MethodLine = ({ area, count, floor, updated }: { area?: string; count: num
 function bestAnswer(list: Company[], where: string, what: string, floor: number) {
   // Companies based here rank first even unrated, so the top-rated one may not be first.
   const top = list.find((c) => rated(c, floor));
-  const count = list.filter((c) => rated(c, floor)).length;
   const guaranteed = list.filter((c) => c.guarantees.length).length;
   const first = !top
     ? `None of the ${list.length} ${what} we compared in ${where} has a Google rating from ${floor} or more reviews yet.`
     : top === list[0]
       ? `${top.name} ranks first of the ${list.length} ${what} we compared in ${where}, rated ${ratingText(top)}.`
       : `${top.name} is the top-rated of the ${list.length} ${what} we compared in ${where}, at ${ratingText(top)}.`;
-  return `${first} ${count} of them have a Google rating from at least ${floor} reviews, and ${guaranteed} state a guarantee.`;
+  const second = !guaranteed ? "None of them publish a guarantee." : guaranteed === list.length ? `All ${list.length} publish a guarantee.` : `${guaranteed} of the ${list.length} publish a guarantee.`;
+  return `${first} ${second}`;
 }
 
 /** A best-of block for an area or a service in it: the answer, the method, the list and the table. */

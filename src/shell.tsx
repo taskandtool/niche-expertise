@@ -73,20 +73,21 @@ function Layout({ page, children }: { page: Page; children?: Child }) {
           Skip to content
         </a>
         <header class="border-b border-line bg-surface">
-          <div class="mx-auto flex max-w-wide flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-4 sm:px-8">
-            <a href="/" class="font-display text-title no-underline">{site.name}</a>
-            <nav aria-label="Main" class="-mx-2 flex max-w-full flex-wrap">
-              {NAV.map(([label, href]) => (
-                <a href={href} class="whitespace-nowrap px-2 py-1 no-underline text-ink-2 hover:text-ink aria-[current=page]:font-semibold aria-[current=page]:text-ink" aria-current={page.path.startsWith(href!) ? "page" : undefined}>
+          <div class="mx-auto flex max-w-wide flex-wrap items-center gap-x-6 gap-y-2 px-5 py-4 sm:px-8">
+            <a href="/" class="mr-auto font-display text-title no-underline">{site.name}</a>
+            {/* On a phone the links get their own line and scroll sideways rather than wrap; Search stays beside the name. */}
+            <nav aria-label="Main" class="order-3 flex w-full min-w-0 flex-nowrap overflow-x-auto [scrollbar-width:none] lg:order-2 lg:-mx-2 lg:w-auto">
+              {NAV.map(([label, href], i) => (
+                <a href={href} class={`whitespace-nowrap py-1 no-underline text-ink-2 hover:text-ink aria-[current=page]:font-semibold aria-[current=page]:text-ink ${i ? "px-2" : "pr-2 lg:pl-2"}`} aria-current={page.path.startsWith(href!) ? "page" : undefined}>
                   {label}
                 </a>
               ))}
-              <a href="/search" data-search-open class="ml-2 inline-flex items-center gap-1.5 rounded-control border border-line px-2.5 py-1 no-underline text-ink-2 hover:border-line-strong hover:text-ink">
-                <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="5.5" /><path d="m13.500 13.500 3.500 3.500" /></svg>
-                Search
-                <kbd data-search-key class="hidden rounded bg-panel px-1.5 font-body text-[0.75rem] text-ink-3 lg:inline" />
-              </a>
             </nav>
+            <a href="/search" data-search-open aria-label="Search" class="order-2 inline-flex shrink-0 items-center gap-1.5 rounded-control border border-line px-2.5 py-1 no-underline text-ink-2 hover:border-line-strong hover:text-ink lg:order-3">
+              <svg viewBox="0 0 20 20" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="5.5" /><path d="m13.500 13.500 3.500 3.500" /></svg>
+              <span class="sr-only sm:not-sr-only">Search</span>
+              <kbd data-search-key class="hidden rounded bg-panel px-1.5 font-body text-[0.75rem] text-ink-3 lg:inline" />
+            </a>
           </div>
         </header>
         <main id="main" class="grow pb-section">{children}</main>
