@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "slug": "niche-expertise",
+  "version": "0.1.0",
+  "needs": {
+    "capabilities": [
+      { "kind": "postgres", "strength": "suggested" }
+    ],
+    "connections": [
+      { "provider": "scrapecreators", "strength": "suggested", "why": "Each company's Facebook, Instagram and LinkedIn, the ads it is running now, and each equipment brand's warranty pages, reviews and news" },
+      { "provider": "google-places", "strength": "suggested", "why": "Each company's Google listing: rating, hours and a few reviews" },
+      { "provider": "dataforseo", "strength": "suggested", "why": "Every Google review, with its date and rating" }
+    ]
+  },
+  "ready": {
+    "service": "web"
+  },
+  "suggestions": [
+    {
+      "id": "choose-a-niche",
+      "label": "Choose a niche",
+      "prompt": "Build a niche expertise site for ",
+      "when": [{ "path": "companies.csv", "is": "missing" }]
+    },
+    {
+      "id": "how-is-the-sample-looking",
+      "label": "How is it going?",
+      "prompt": "How is the site going? What's done, what's waiting, and is anything stuck?",
+      "when": [{ "path": "companies.csv", "is": "present" }]
+    },
+    {
+      "id": "write-the-guides",
+      "label": "Write the guides",
+      "prompt": "Write the guides for the services and guarantees with enough data.",
+      "when": [
+        { "path": "data/stats.json", "is": "present" },
+        { "path": "content", "is": "missing" }
+      ]
+    },
+    {
+      "id": "what-does-the-market-look-like",
+      "label": "What does the market look like?",
+      "prompt": "What stands out in this market? Who guarantees what, and what's normal here?",
+      "when": [{ "path": "data/stats.json", "is": "present" }]
+    },
+    {
+      "id": "deploy-the-site",
+      "label": "Deploy the site",
+      "prompt": "Check the site and deploy it to production.",
+      "when": [{ "path": "data/pages.json", "is": "present" }]
+    }
+  ]
+}
