@@ -1,5 +1,7 @@
 # Niche Expertise
 
+[![Deploy on Task & Tool](https://taskandtool.com/images/deploy-button.svg)](https://taskandtool.com/accounts/register?starter_app=niche-expertise)
+
 An independent guide to one trade in one area, built to rank and to be trusted: HVAC in North
 Austin, dentists in Leeds, agencies in Denver. Most directories stop at a name and a star rating.
 Every page here answers what a customer asks before they call.
