@@ -41,7 +41,7 @@ app.get("/contact", async (c) => {
       "/contact",
       heading,
       <>
-        <p class="text-lede text-ink-2">Claim your listing, ask for a correction or a removal, or ask us anything. A person reads each one.</p>
+        <p class="text-lede text-ink-2">Claim your listing, ask for a correction or a removal, or ask us anything.</p>
         <div class="mt-6">
           {form ?? <p>The form isn't open yet.{site.contactEmail ? <> Write to <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a> instead.</> : null}</p>}
         </div>

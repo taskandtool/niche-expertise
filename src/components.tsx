@@ -6,6 +6,8 @@ import { Band, site, type Page } from "./shell";
 export { mergeGuarantees, type GuaranteeGroup } from "./guarantees";
 
 export const plural = (n: number, one: string, many = `${one}s`) => `${n} ${n === 1 ? one : many}`;
+/** "a" or "an" before a word: "an upfront price guarantee". */
+export const an = (w: string) => (/^[aeiou]/i.test(w) ? "an" : "a");
 export const title = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 export const day = (s?: string | null) => (s ? new Date(`${s}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : "");
 

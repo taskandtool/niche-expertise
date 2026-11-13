@@ -27,9 +27,9 @@ const lines = (rows: [string, unknown][]) => rows.filter(([, v]) => v).map(([k, 
 async function pass(c: Context, db: Db, id: number, to: Listing, sub: { name: string | null; email: string | null; phone: string | null }, data: Record<string, unknown>): Promise<void> {
   const env = envOf(c);
   const request = lines([["Name", sub.name], ["Phone", sub.phone], ["Email", sub.email], ["ZIP code", data.zip], ["What they need", data.need]]);
-  let said = "Held: forward_leads is off, so a person passes this on";
-  if (site.forwardLeads && !to.email) said = "Held: this company has no address to send it to";
-  else if (site.forwardLeads && !emailsCustomers(env)) said = "Held: no email sender can reach a business yet";
+  let said = "Held: forward_leads is off. Pass this on yourself";
+  if (site.forwardLeads && !to.email) said = "Held: this company has no email address";
+  else if (site.forwardLeads && !emailsCustomers(env)) said = "Held: email to businesses isn't set up yet";
   else if (site.forwardLeads) {
     const sent = await sendEmail(env, {
       to: [to.email as string],

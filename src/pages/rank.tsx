@@ -1,6 +1,6 @@
 // Best-of lists, "X vs Y" and alternatives: the order, the reasons and the gaps all come
 // from scripts/rank.mjs. A page words them here, the same way every time.
-import { Check, PageHead, RatingBadge, Section, itemList, lengthWord, plural, title } from "../components";
+import { Check, PageHead, an, RatingBadge, Section, itemList, lengthWord, plural, title } from "../components";
 import type { Alternatives, Company, Data, Reason, Standout, Versus } from "../data";
 import { Band, site, type Page } from "../shell";
 
@@ -20,7 +20,7 @@ const asLength = (length: string) => title(lengthWord(length));
 
 export function standoutText(s: Standout): string {
   if (s.kind === "longer-guarantee") return `${asLength(s.length)} ${s.guarantee} guarantee (most offer ${s.standard})`;
-  if (s.kind === "rare-guarantee") return `One of ${s.count} companies here with a ${s.guarantee} guarantee`;
+  if (s.kind === "rare-guarantee") return `One of ${s.count} companies here with ${an(s.guarantee)} ${s.guarantee} guarantee`;
   if (s.kind === "most-reviewed") return `Most Google reviews here: ${s.count.toLocaleString("en-US")}`;
   if (s.kind === "years") return `In business ${s.years} years`;
   return `Current offer: ${s.title}`;
@@ -107,7 +107,7 @@ export function RankedList({ companies, floor }: { companies: Company[]; floor: 
 
 const MethodLine = ({ area, count, floor, updated }: { area?: string; count: number; floor: number; updated: string }) => (
   <p class="mt-4 max-w-content text-ink-2">
-    How we rank: {area ? `companies based in ${area} come first, then the best Google ratings.` : "the best Google ratings first."} A rating counts once it has {floor} reviews, and more reviews count for more. {plural(count, "company", "companies")} compared. Updated {month(updated)}.
+    How we rank: {area ? `companies based in ${area} first, then by Google rating.` : "by Google rating."} We count a rating once it has {floor} reviews and give more weight to ratings with more reviews. {plural(count, "company", "companies")} compared. Updated {month(updated)}.
   </p>
 );
 
@@ -116,11 +116,15 @@ function bestAnswer(list: Company[], where: string, what: string, floor: number)
   // Companies based here rank first even unrated, so the top-rated one may not be first.
   const top = list.find((c) => rated(c, floor));
   const guaranteed = list.filter((c) => c.guarantees.length).length;
+  if (list.length === 1) {
+    const only = list[0];
+    return `We compared one company in ${where}: ${only.name}. ${top ? `It's rated ${ratingText(top)}.` : `It has fewer than ${floor} Google reviews so far.`} ${guaranteed ? "It publishes a guarantee." : "It doesn't publish a guarantee."}`;
+  }
   const first = !top
     ? `None of the ${list.length} ${what} we compared in ${where} has a Google rating from ${floor} or more reviews yet.`
     : top === list[0]
-      ? `${top.name} ranks first of the ${list.length} ${what} we compared in ${where}, rated ${ratingText(top)}.`
-      : `${top.name} is the top-rated of the ${list.length} ${what} we compared in ${where}, at ${ratingText(top)}.`;
+      ? `${top.name} is first of the ${list.length} ${what} we compared in ${where}. It's rated ${ratingText(top)}.`
+      : `${top.name} has the best rating of the ${list.length} ${what} we compared in ${where}: ${ratingText(top)}.`;
   const second = !guaranteed ? "None of them publish a guarantee." : guaranteed === list.length ? `All ${list.length} publish a guarantee.` : `${guaranteed} of the ${list.length} publish a guarantee.`;
   return `${first} ${second}`;
 }
@@ -176,7 +180,7 @@ export function versusPage(d: Data, v: Versus) {
   const Body = () => (
     <div data-pagefind-body>
       <PageHead page={page} lede={verdicts(v, a, b).join(" ")} />
-      <Band><p class="max-w-content text-label text-ink-3">Every fact here comes from each company's own website and its Google listing. Updated {month(v.updated)}.</p></Band>
+      <Band><p class="max-w-content text-label text-ink-3">Every fact here is from each company's own website and its Google listing. Updated {month(v.updated)}.</p></Band>
       <Section heading="Side by side"><ComparisonTable companies={[a, b]} label={`${a.name} and ${b.name}, side by side`} /></Section>
       <Section heading="More on each">
         <ul class="space-y-1.5">

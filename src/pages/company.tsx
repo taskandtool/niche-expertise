@@ -3,7 +3,7 @@
 // Every line comes from its record, and a section with nothing to say is left out.
 import { slugify } from "../../scripts/lib.mjs";
 import type { Company } from "../data";
-import { CTA, CTA_QUIET, Check, CompanyMap, GoogleMark, type GuaranteeGroup, OfferCard, mergeGuarantees, PhoneIcon, RatingBadge, ReviewCard, ReviewMarquee, Stars, Tag, TermsApply, day, lengthWord, title } from "../components";
+import { CTA, CTA_QUIET, Check, CompanyMap, an, GoogleMark, type GuaranteeGroup, OfferCard, mergeGuarantees, PhoneIcon, RatingBadge, ReviewCard, ReviewMarquee, Stars, Tag, TermsApply, day, lengthWord, title } from "../components";
 import { SpamFields } from "../data/spam";
 import { Band, site, type Page } from "../shell";
 
@@ -493,7 +493,7 @@ export function CompanyBody({ c, compare = [] }: { c: Company; compare?: { path:
       <Band class="pb-8 text-center">
         <p class="flex flex-wrap justify-center gap-2">
           <Tag href={`/compare?c=${c.slug}`}>Compare with others</Tag>
-          {c.guarantees.filter((g) => g.kind !== "other").slice(0, 2).map((g) => <Tag href={`/guarantees/${slugify(g.kind)}`}>Others with a {g.kind} guarantee</Tag>)}
+          {c.guarantees.filter((g) => g.kind !== "other").slice(0, 2).map((g) => <Tag href={`/guarantees/${slugify(g.kind)}`}>Others with {an(g.kind)} {g.kind} guarantee</Tag>)}
           {c.locations.flatMap((l) => l.areas).slice(-1).map((p) => <Tag href={p}>Others nearby</Tag>)}
           {compare.map((x) => <Tag href={x.path}>{x.label}</Tag>)}
         </p>

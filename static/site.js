@@ -22,7 +22,7 @@
     n.remove();
     if (section && !section.querySelector("[data-ends]")) {
       var none = document.createElement("p");
-      none.textContent = "No offers are running at the moment.";
+      none.textContent = "No offers at the moment.";
       section.append(none);
     }
   });

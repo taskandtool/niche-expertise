@@ -95,7 +95,7 @@ function Layout({ page, children }: { page: Page; children?: Child }) {
           <div class="mx-auto grid max-w-wide gap-6 px-5 py-10 sm:px-8 md:grid-cols-[1fr_auto]">
             <div class="max-w-content">
               <p class="font-display text-title text-night-ink">{site.name}</p>
-              <p class="mt-2">An independent guide. Details come from each company's website and public reviews. We haven't verified them.</p>
+              <p class="mt-2">An independent guide. Details are from each company's website and public reviews. We haven't verified them.</p>
               {site.disclosure ? <p class="mt-2">{site.disclosure}</p> : null}
             </div>
             <nav aria-label="About this site" class="flex flex-col gap-1">

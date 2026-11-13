@@ -2,7 +2,7 @@
 // brands, phrases. Every number here was counted by scripts/build-data.mjs.
 import { raw } from "hono/html";
 import { guideHtml } from "../guide";
-import { CHIP, Check, CompanyCard, CompanyMap, EntryTiles, lengthWord, Filters, ListNote, OfferGrid, itemList, mergeGuarantees, PageHead, Section, TermsApply, plural, takeTurns, title } from "../components";
+import { CHIP, Check, an, CompanyCard, CompanyMap, EntryTiles, lengthWord, Filters, ListNote, OfferGrid, itemList, mergeGuarantees, PageHead, Section, TermsApply, plural, takeTurns, title } from "../components";
 import { guideText, type BrandEntry, type Company, type Data, type GuaranteeEntry, type Link, type ListEntry, type ServiceEntry } from "../data";
 import { Band, site, type Page } from "../shell";
 import { ComparisonTable } from "./rank";
@@ -126,7 +126,7 @@ function hub(path: string, heading: string, description: string, entries: ListEn
   const Body = () => (
     <>
       <PageHead page={page} />
-      <Band class="mt-4">{entries.length ? <EntryTiles entries={entries} /> : <ListNote>Nothing has been read yet.</ListNote>}</Band>
+      <Band class="mt-4">{entries.length ? <EntryTiles entries={entries} /> : <ListNote>None yet.</ListNote>}</Band>
     </>
   );
   return { page, Body };
@@ -175,7 +175,7 @@ export function guaranteePage(d: Data, g: GuaranteeEntry) {
   const page: Page = {
     path: g.path,
     title: `${title(g.name)} guarantees${here()}`,
-    description: `${plural(g.count, "company", "companies")}${here()} with a ${g.name} guarantee. See how long each one lasts and what it covers.`,
+    description: `${plural(g.count, "company", "companies")}${here()} with ${an(g.name)} ${g.name} guarantee. See how long each one lasts and what it covers.`,
     index: g.index,
     crumbs: [{ label: "Guarantees", href: "/guarantees" }],
     jsonLd: [itemList(`${title(g.name)} guarantees${here()}`, [...new Map(g.companies.map((x) => [x.company.slug, x.company])).values()])],
@@ -184,10 +184,10 @@ export function guaranteePage(d: Data, g: GuaranteeEntry) {
   const further = d.companies.flatMap((c) => c.standouts.filter((s) => s.kind === "longer-guarantee" && s.guarantee === g.name).map((s) => ({ c, length: (s as { length: string }).length })));
   const Body = () => (
     <div data-pagefind-body>
-      <PageHead page={page} lede={`${plural(g.count, "company", "companies")}${here()} offer a ${g.name} guarantee.${g.standard ? ` The usual length is ${g.standard}.` : ""}`} />
+      <PageHead page={page} lede={`${plural(g.count, "company", "companies")}${here()} ${g.count === 1 ? "offers" : "offer"} ${an(g.name)} ${g.name} guarantee.${g.standard ? ` The usual length is ${g.standard}.` : ""}`} />
       {further.length ? (
         <Section heading="Who goes further">
-          <ul class="space-y-1.5">{further.map((x) => <li class="flex items-start gap-2"><Check class="mt-0.5" /><span><a href={x.c.path}>{x.c.name}</a>: {x.length}, where most offer {g.standard}</span></li>)}</ul>
+          <ul class="space-y-1.5">{further.map((x) => <li class="flex items-start gap-2"><Check class="mt-0.5" /><span><a href={x.c.path}>{x.c.name}</a>: {x.length} (most offer {g.standard})</span></li>)}</ul>
         </Section>
       ) : null}
       <Band class="mt-4">
@@ -219,13 +219,14 @@ export function brandPage(d: Data, b: BrandEntry) {
   const installers = [...new Set(b.companies.map((x) => x.company.slug))].map((s) => d.companies.find((c) => c.slug === s)).filter((c): c is Company => Boolean(c));
   const first = m?.warranty[0];
   const lede = [
-    first ? `${b.name} gives ${first.length ? `${first.length} on ${first.covers}` : `a ${first.covers} warranty`}${first.condition ? ` (${first.condition})` : ""}.` : null,
-    `${plural(b.count, "company", "companies")}${here()} install it${b.adds.length ? `, and ${b.adds.length} add a guarantee of their own` : ""}.`,
+    first ? `${first.length ? `${b.name}'s own warranty is ${first.length} on ${first.covers}` : `${b.name} has ${an(first.covers)} ${first.covers} warranty`}${first.condition ? ` (${first.condition})` : ""}.` : null,
+    `${plural(b.count, "company", "companies")}${here()} ${b.count === 1 ? "installs" : "install"} it.`,
+    !b.adds.length ? null : b.adds.length < b.count ? `${b.adds.length} of them ${b.adds.length === 1 ? "adds" : "add"} a guarantee.` : b.count === 1 ? "It adds a guarantee." : `All ${b.count} add a guarantee.`,
   ].filter(Boolean).join(" ");
   const page: Page = {
     path: b.path,
     title: `${b.name} installers${here()}`,
-    description: `${plural(b.count, "company", "companies")}${here()} that install ${b.name}${m?.warranty.length ? `, ${b.name}'s own warranty terms,` : ""} and what each installer adds.`,
+    description: `${plural(b.count, "company", "companies")}${here()} ${b.count === 1 ? "installs" : "install"} ${b.name}. See ${m?.warranty.length ? `${b.name}'s own warranty and ` : ""}what each installer adds.`,
     index: b.index,
     crumbs: [{ label: "Brands", href: "/brands" }],
     jsonLd: [itemList(`${b.name} installers${here()}`, installers)],
