@@ -6,7 +6,7 @@ guarantees, current offers and Google rating before they hire.
 
 [![Deploy on Task & Tool](https://taskandtool.com/images/deploy-button.svg)](https://taskandtool.com/accounts/register?starter_app=niche-expertise)
 
-![The North Austin HVAC Guide's homepage, with Larkspur Heating & Air's page on a phone beside it](https://taskandtool.com/images/starter-apps/niche-expertise.webp)
+![The North Austin HVAC Guide's homepage and Larkspur Heating & Air's page on a phone](https://taskandtool.com/images/starter-apps/niche-expertise.webp)
 
 It's made to run on Task & Tool. There, each app has its own computer for
 your AI agent. The agent uses the scripts and skills in this repo to find
@@ -21,25 +21,26 @@ Click the button above, or pick Niche Expertise when you create an app on
 tell the agent the trade and the area in the chat: "Build a niche expertise
 site for HVAC companies in North Austin."
 
-See it in use on the [Niche Expertise page](https://taskandtool.com/starter-apps/niche-expertise).
+See it in use on the [Niche Expertise
+page](https://taskandtool.com/starter-apps/niche-expertise).
 
 ## Features
 
-### You see the list and the cost before anything is spent
+### The company list and the cost come first
 
 The agent finds the businesses in Overture Maps or takes a list you give it.
 Overture is free. The agent tells you how many it found, how many have
 websites, where they are, and what reading them will cost in credits, AI and
 time. Then it reads about 20 of them and builds a few pages for you to
-check. It reads the rest only after your yes.
+check. It reads the rest when you tell it to.
 
 ### The agent reads each company's site, Google listing and social pages
 
 It gathers what the company publishes and writes one record of facts. A fact
 has a short exact quote and its source. Before a deploy, the agent traces
 the quotes back to what was gathered. When two sources disagree, the agent
-puts both on the page. The agent adds no facts of its own. Readers see a
-note on company pages that nobody has verified the facts.
+puts both on the page. The agent adds no facts of its own. Each company page
+has a note: nobody has verified its facts.
 
 | Source | What the agent gets from it |
 |---|---|
@@ -62,27 +63,27 @@ offer 1 year)". A blank in a comparison reads "not stated".
 
 <img src="https://taskandtool.com/images/marketing/north-austin-guide-labor.webp" width="420" alt="Who goes further: the labor guarantee each HVAC company offers, in years">
 
-### Readers see only current offers
+### Current offers only
 
 Once a month the agent checks the companies' Facebook and Instagram posts
-and running ads for new offers. Daily, the agent takes down offers that are
-past their end date or gone from their source. You can see the ended offers
-on the What's new page. Visitors see the change after the next deploy. You
-ask for it in the chat.
+and running ads for new offers. Every day the agent takes down offers that
+are past their end date or gone from their source. You can see the ended
+offers on the What's new page. Visitors see the change after the next
+deploy. You ask for it in the chat.
 
 <img src="https://taskandtool.com/images/marketing/north-austin-guide-offers.webp" width="420" alt="Current offers from HVAC companies and the date each one ends">
 
-### Each town and service gets a best-of list
+### Best-of lists by town and service
 
 Companies based in that town come first. Next come the best Google ratings.
 A rating counts once it has 20 reviews. You can change that number in
 `SITE.md`. More reviews give a rating more weight. Above the list is one
-line on how it ranks. Nobody can pay for a place. Under the list is a
-side-by-side table.
+line on how the list is ranked. Nobody can pay for a place. Under the list
+is a side-by-side table.
 
 <img src="https://taskandtool.com/images/marketing/north-austin-guide-round-rock.webp" width="420" alt="Best HVAC companies in Round Rock, ranked by Google rating">
 
-### The agent builds the pages people search for
+### Pages for the searches people make
 
 Besides a page for each company, town and service, the agent builds:
 
@@ -106,7 +107,7 @@ signed up. The agent turns it on only when you ask. It needs Resend or
 Postmark. Businesses can claim their listing, correct it or ask to be
 removed. You decide on each request.
 
-### You can schedule refreshes, health checks and audits
+### Scheduled refreshes, health checks and audits
 
 When you ask, the agent schedules these jobs:
 
@@ -126,13 +127,13 @@ offers, standout guarantees and new "vs" pages. It drafts a Facebook or
 LinkedIn post for each. It uses only facts from the page. It files them as
 drafts and shows them to you.
 
-### `npm run check` must pass before a deploy
+### Checks before every deploy
 
 The deploy stops on broken links, a quote that doesn't match its source, an
 offer shown as current after it ended, missing titles or structured data,
 thin pages open to search, and wording that sounds like AI.
 
-### Skills for each kind of work
+### Skills in this repo
 
 | Skill | What it does |
 |---|---|
@@ -153,14 +154,14 @@ thin pages open to search, and wording that sounds like AI.
 Task & Tool is the easiest place to run it: the agent, the scripts and the
 scheduled jobs all run on the app's computer. Each app gets:
 
-- Its own computer for the agent, and a dev address where your team sees
-  changes before they go live
-- A Postgres database for quote requests and corrections that you can roll
-  back to an earlier point in time
+- Its own computer for the agent
+- A dev address your team opens to see changes before they go live
+- A Postgres database for quote requests and corrections. You can roll it
+  back to an earlier point in time.
 - Publishing on your own domain with a free SSL certificate. Only your team
   sees production until you make it public.
-- Connections to Google Places, ScrapeCreators, DataForSEO and email. Their
-  keys stay out of this repo.
+- Connections to Google Places, ScrapeCreators, DataForSEO and email. Task &
+  Tool holds their keys.
 - Scheduled jobs for the refreshes and audits above
 
 ## Make it your own
