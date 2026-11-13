@@ -1,14 +1,15 @@
 # Niche Expertise
 
-**A local guide to one trade in one area that your AI agent builds and keeps
-current by chat.** You get a site where people compare each company's
-guarantees, current offers and Google rating before they hire.
+**A local guide to one trade in one area. You build it and keep it up to
+date by chatting with your AI agent.** You get a site where people compare
+each company's guarantees, current offers and Google rating before they
+hire.
 
 [![Deploy on Task & Tool](https://taskandtool.com/images/deploy-button.svg)](https://taskandtool.com/accounts/register?starter_app=niche-expertise)
 
 ![The North Austin HVAC Guide's homepage and Larkspur Heating & Air's page on a phone](https://taskandtool.com/images/starter-apps/niche-expertise.webp)
 
-It's made to run on Task & Tool. There, each app has its own computer for
+It's made to run on Task & Tool. Each app there has its own computer for
 your AI agent. The agent uses the scripts and skills in this repo to find
 the businesses, read what each one publishes and build a page for every
 company, town and service. The site is built with Hono and Tailwind, its map
@@ -26,7 +27,7 @@ page](https://taskandtool.com/starter-apps/niche-expertise).
 
 ## Features
 
-### The company list and the cost come first
+### You see the company list and the cost first
 
 The agent finds the businesses in Overture Maps or takes a list you give it.
 Overture is free. The agent tells you how many it found, how many have
@@ -36,11 +37,11 @@ check. It reads the rest when you tell it to.
 
 ### The agent reads each company's site, Google listing and social pages
 
-It gathers what the company publishes and writes one record of facts. A fact
-has a short exact quote and its source. Before a deploy, the agent traces
-the quotes back to what was gathered. When two sources disagree, the agent
-puts both on the page. The agent adds no facts of its own. Each company page
-has a note: nobody has verified its facts.
+It gathers what the company publishes and writes down the facts in one
+record. A fact has a short exact quote and its source. Before a deploy, the
+agent checks each quote against what it gathered. Where two sources differ,
+the agent puts both on the page. The agent adds no facts of its own. Each
+company page has a note: nobody has verified its facts.
 
 | Source | What the agent gets from it |
 |---|---|
@@ -48,7 +49,7 @@ has a note: nobody has verified its facts.
 | Google listing | Rating, review count, hours and a few reviews |
 | Facebook, Instagram, LinkedIn, TikTok | Background, photos and posts |
 | Meta and Google ad libraries | The ads a company is running now |
-| DataForSEO | Every Google review, with its date and rating |
+| DataForSEO | Every Google review with its date and rating |
 
 None of the connections is required. With none, the agent works from the
 company websites alone.
@@ -56,10 +57,11 @@ company websites alone.
 ### Readers can compare guarantees side by side
 
 The agent records a guarantee's length, whether it covers parts or labor,
-its conditions and whose it is. Once three companies state a length, the
-usual length is the middle one. A company that offers longer gets a note on
-best-of lists and on that guarantee's page: "10-year labor guarantee (most
-offer 1 year)". A blank in a comparison reads "not stated".
+its conditions and whether the company or the maker gives it. Once three
+companies state a length, the agent takes the middle one as the usual
+length. A company that offers longer gets a note on best-of lists and on
+that guarantee's page: "10-year labor guarantee (most offer 1 year)". Where
+a company doesn't state something, readers see "not stated" in comparisons.
 
 <img src="https://taskandtool.com/images/marketing/north-austin-guide-labor.webp" width="420" alt="Who goes further: the labor guarantee each HVAC company offers, in years">
 
@@ -68,18 +70,19 @@ offer 1 year)". A blank in a comparison reads "not stated".
 Once a month the agent checks the companies' Facebook and Instagram posts
 and running ads for new offers. Every day the agent takes down offers that
 are past their end date or gone from their source. You can see the ended
-offers on the What's new page. Visitors see the change after the next
-deploy. You ask for it in the chat.
+offers on the What's new page. Visitors see the change once you ask the
+agent to deploy.
 
 <img src="https://taskandtool.com/images/marketing/north-austin-guide-offers.webp" width="420" alt="Current offers from HVAC companies and the date each one ends">
 
 ### Best-of lists by town and service
 
-Companies based in that town come first. Next come the best Google ratings.
-A rating counts once it has 20 reviews. You can change that number in
-`SITE.md`. More reviews give a rating more weight. Above the list is one
-line on how the list is ranked. Nobody can pay for a place. Under the list
-is a side-by-side table.
+On a town's list, the agent puts companies based in that town first, then
+ranks by Google rating. It counts a rating once the company has 20 reviews.
+You can change that number in `SITE.md`. The more reviews a rating has, the
+more weight the agent gives it. Above the list is one line on how the list
+is ranked. Nobody can pay for a place. Under the list is a side-by-side
+table.
 
 <img src="https://taskandtool.com/images/marketing/north-austin-guide-round-rock.webp" width="420" alt="Best HVAC companies in Round Rock, ranked by Google rating">
 
@@ -95,73 +98,72 @@ Besides a page for each company, town and service, the agent builds:
 - a page of current offers, a list of companies with a map, and a filter by
   ZIP code or distance
 
-The agent keeps a page out of search until it has enough real data. You set
+The agent keeps a page out of search until the page has enough data. You set
 how much in `SITE.md`.
 
 ### Readers can call a company from its page
 
 A company page with a phone number has a Call button at the top. The
-company's Google rating is there too. You can also send quote requests to
-the companies' published emails. That means emailing businesses that never
-signed up. The agent turns it on only when you ask. It needs Resend or
-Postmark. Businesses can claim their listing, correct it or ask to be
-removed. You decide on each request.
+company's Google rating is there too. Readers can also send a quote request
+to a company's published email. That means emailing businesses that never
+signed up. The agent sets up these emails only when you ask. They need
+Resend or Postmark. Businesses can claim their listing, correct it or ask to
+be removed. You decide on each request.
 
 ### Scheduled refreshes, health checks and audits
 
 When you ask, the agent schedules these jobs:
 
-| Job | When | What it does |
+| Job | When | What the agent does |
 |---|---|---|
 | Refresh offers | Monthly | Checks ads and recent posts for new offers |
-| Rebuild data | Daily | Retires offers that ended or were taken down at their source. Uses no AI and costs nothing |
+| Rebuild data | Daily | Takes down offers that ended or are gone from their source. No AI and no cost |
 | Refresh everything | Quarterly | Re-reads sites, profiles and reviews. Companies with no changes cost no AI |
-| Find new businesses | Quarterly | Lists new companies. The agent reads them when you ask |
-| Site health | Weekly | Checks the live site for broken links and SEO basics, once it has an address |
+| Find new businesses | Quarterly | Lists new companies and reads them when you ask |
+| Site health | Weekly | Once the site has an address, checks it for broken links and SEO basics |
 | Audit | Monthly | Spot-checks company facts against the live sources and reads Search Console |
 
 ### Ask the agent for this week's posts
 
-The agent lists what changed on the site: best-of lists that moved, new
-offers, standout guarantees and new "vs" pages. It drafts a Facebook or
-LinkedIn post for each. It uses only facts from the page. It files them as
-drafts and shows them to you.
+The agent lists the week's changes: moves on best-of lists, new offers,
+standout guarantees and new "vs" pages. It drafts a Facebook or LinkedIn
+post for each. It uses only facts from the page and shows you the drafts.
 
 ### Checks before every deploy
 
-The deploy stops on broken links, a quote that doesn't match its source, an
-offer shown as current after it ended, missing titles or structured data,
-thin pages open to search, and wording that sounds like AI.
+The agent can't deploy the site with broken links, a quote that doesn't
+match its source, an offer shown as current after it ended, missing titles
+or structured data, thin pages open to search, or AI-sounding wording.
 
 ### Skills in this repo
 
-| Skill | What it does |
+| Skill | What the agent uses it for |
 |---|---|
-| `read-company` | Reads everything gathered on one company and writes its record |
-| `read-brand` | Reads a brand's warranty terms, reviews and news |
-| `tidy-names` | Sets what this trade looks for and merges two names for one thing |
-| `write-guide` | Writes a guide to a service or guarantee: what is normal here and what to ask |
-| `cross-check` | Spot-checks pages against the live sources, and runs the monthly audit |
-| `site` | Changes page templates, filters, the map and the correction form |
+| `read-company` | Reading everything gathered on one company and writing its record |
+| `read-brand` | Reading a brand's warranty terms, reviews and news |
+| `tidy-names` | Choosing what to look for in this trade and merging two names for one thing |
+| `write-guide` | Writing a guide to a service or guarantee: what is normal here and what to ask |
+| `cross-check` | Spot-checking pages against the live sources and running the monthly audit |
+| `site` | Changing page templates, filters, the map and the correction form |
 | `seo` | Best-of lists, "vs" pages, titles and structured data for Google and AI answers |
-| `design` | Changes the colors, type and spacing |
-| `social-post` | Writes posts in the owner's voice |
-| `tropes` | Spots phrases that read as machine-written |
+| `design` | Changing the colors, type and spacing |
+| `social-post` | Writing posts in the owner's voice |
+| `tropes` | Finding machine-sounding phrases |
 | `forms` `data` | The quote and contact forms, and the database code under them |
 
 ## Why run it on Task & Tool
 
-Task & Tool is the easiest place to run it: the agent, the scripts and the
-scheduled jobs all run on the app's computer. Each app gets:
+Task & Tool is the easiest place to run it: the agent runs the scripts and
+scheduled jobs on the app's computer. Each app has:
 
 - Its own computer for the agent
-- A dev address your team opens to see changes before they go live
-- A Postgres database for quote requests and corrections. You can roll it
-  back to an earlier point in time.
+- A dev address where your team sees changes before you publish them
+- Access to the project's Postgres database for quote requests and
+  corrections. You can roll it back to an earlier point in time.
 - Publishing on your own domain with a free SSL certificate. Only your team
   sees production until you make it public.
-- Connections to Google Places, ScrapeCreators, DataForSEO and email. Task &
-  Tool holds their keys.
+- Connections to Google Places, ScrapeCreators, DataForSEO and email. We
+  hold their keys.
 - Scheduled jobs for the refreshes and audits above
 
 ## Make it your own
@@ -190,22 +192,23 @@ starter-app.json  what the app needs and its chat suggestions
 ```
 
 What the agent gathers and writes (`companies.csv`, `raw/`, `records/`,
-`data/`, `content/`, `posts/` and the rest) stays out of git. Task & Tool
-restores it from backups on a new machine.
+`data/`, `content/`, `posts/` and the rest) is not in git. We restore it
+from backups on a new machine.
 
 ## Commands
 
 The agent runs these on the app's computer. With Node 20 or later, you can
 run the site on your own computer too.
 
-- `npm run dev` serves the site on localhost:3000 and reloads it on every
-  change. Forms need a database in `DATABASE_URL`.
-- `npm run check` builds the site and runs every check a deploy must pass.
-- `npm test` runs the tests.
-- `npm run deploy` updates the database, builds the site, runs the checks
-  and publishes it to production. It works only on Task & Tool.
+- `npm run dev`: serve the site on localhost:3000 with live reload. Forms
+  need a database in `DATABASE_URL`.
+- `npm run check`: build the site and run every check that must pass before
+  a deploy.
+- `npm test`: run the tests.
+- `npm run deploy`: update the database, build the site, run the checks and
+  publish it to production. You can run it only on Task & Tool.
 
-Each command in `AGENTS.md` takes `--help`.
+`AGENTS.md` lists more commands. You can pass `--help` to any of them.
 
 ## Third-party tools
 
