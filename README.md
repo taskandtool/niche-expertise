@@ -120,8 +120,7 @@ drafts and shows them to you.
 
 The deploy stops on broken links, a quote that doesn't match its source, an
 offer shown as current after it ended, missing titles or structured data,
-thin pages open to search, and wording that sounds like AI. `npm test` runs
-the repo's 138 tests.
+thin pages open to search, and wording that sounds like AI.
 
 ### Skills for each kind of work
 
