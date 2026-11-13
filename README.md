@@ -6,6 +6,8 @@ guarantees, current offers and Google rating before they hire.
 
 [![Deploy on Task & Tool](https://taskandtool.com/images/deploy-button.svg)](https://taskandtool.com/accounts/register?starter_app=niche-expertise)
 
+![The North Austin HVAC Guide's homepage, with Larkspur Heating & Air's page on a phone beside it](https://taskandtool.com/images/starter-apps/niche-expertise.webp)
+
 It's made to run on Task & Tool. There, each app has its own computer for
 your AI agent. The agent uses the scripts and skills in this repo to find
 the businesses, read what each one publishes and build a page for every
@@ -18,6 +20,8 @@ Click the button above, or pick Niche Expertise when you create an app on
 [Task & Tool](https://taskandtool.com/starter-apps/niche-expertise). Then
 tell the agent the trade and the area in the chat: "Build a niche expertise
 site for HVAC companies in North Austin."
+
+See it in use on the [Niche Expertise page](https://taskandtool.com/starter-apps/niche-expertise).
 
 ## Features
 
@@ -56,6 +60,8 @@ usual length is the middle one. A company that offers longer gets a note on
 best-of lists and on that guarantee's page: "10-year labor guarantee (most
 offer 1 year)". A blank in a comparison reads "not stated".
 
+<img src="https://taskandtool.com/images/marketing/north-austin-guide-labor.webp" width="420" alt="Who goes further: the labor guarantee each HVAC company offers, in years">
+
 ### Readers see only current offers
 
 Once a month the agent checks the companies' Facebook and Instagram posts
@@ -64,6 +70,8 @@ past their end date or gone from their source. You can see the ended offers
 on the What's new page. Visitors see the change after the next deploy. You
 ask for it in the chat.
 
+<img src="https://taskandtool.com/images/marketing/north-austin-guide-offers.webp" width="420" alt="Current offers from HVAC companies and the date each one ends">
+
 ### Each town and service gets a best-of list
 
 Companies based in that town come first. Next come the best Google ratings.
@@ -71,6 +79,8 @@ A rating counts once it has 20 reviews. You can change that number in
 `SITE.md`. More reviews give a rating more weight. Above the list is one
 line on how it ranks. Nobody can pay for a place. Under the list is a
 side-by-side table.
+
+<img src="https://taskandtool.com/images/marketing/north-austin-guide-round-rock.webp" width="420" alt="Best HVAC companies in Round Rock, ranked by Google rating">
 
 ### The agent builds the pages people search for
 
