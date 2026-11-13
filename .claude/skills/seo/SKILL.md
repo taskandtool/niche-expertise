@@ -39,8 +39,8 @@ companies have facts to set side by side.
   count, among companies with an address in Round Rock. 31 checked, updated
   November 2026."
 - **A visible updated date** matching `dateModified`. It changes only when
-  the page's facts change: answers favour recent pages, and a date moved
-  without a change is a lie the data can expose.
+  the page's facts change. AI answers favour recent pages. A date moved
+  without a change is false.
 - **Sources on every claim:** a quote links to where it was said, and a
   rating names its platform ("4.8 from 1,240 Google reviews"). Adding
   statistics, quotations and sources raised a page's visibility in AI
@@ -103,12 +103,12 @@ enough on the list itself to stand alone.
   restaurants, but `ItemList` still describes the page.
 - No `llms.txt` or other AI files: Google says none are needed.
 
-## What sinks a site like this
+## What gets a site like this penalized
 
 - A page for a search we have no facts for, or a copy with only the city
   swapped.
 - Several near-identical sites run to hide scale (named in Google's spam
-  policy). Each niche site stands on its own data.
+  policy). Each niche site uses only its own data.
 - Filler an AI wrote to make a page longer. `npm run check` runs the
   `tropes` scan over the copy.
 

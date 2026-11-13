@@ -29,7 +29,7 @@ none of them put together:
 
 1. **Comparable guarantees.** Length, parts or labor, conditions, and whose it is, across a
    whole market.
-2. **Live offers from everywhere.** Websites, social posts and running ads, in one place. A
+2. **Live offers from every source:** websites, social posts and running ads. A
    company's ad in the Meta or Google ad library shows what it is promoting right now, which
    its website often does not.
 3. **Local market facts.** "In Round Rock, 14 of 38 companies publish a labor warranty." Each
@@ -117,7 +117,7 @@ failures that name the fix, and conditional chat suggestions.
     companies stating `versus_fields` of the same facts, an alternatives page companies that beat it on
     a stated fact. Under the bar the page stays out of search.
 16. **Every example is made up.** Companies, people, domains, phones and equipment brands in code,
-    tests, docs and skills are invented (Northwind, `larkspur.example`, 555 numbers). Real data lives
+    tests, docs and skills are invented (Northwind, `larkspur.example`, 555 numbers). Real data is kept
     only in the gitignored working folders and `samples/`.
 
 ## What a company profile holds
@@ -380,7 +380,7 @@ Most of the site is built by code from the data. AI writes only where an explana
 |---|---|---|---|---|
 | **Home** | `/` | Code | "What do you need?" search, where you are, ways to browse, popular and new | Yes |
 | **Browse hub** | `/companies`, `/offers`, `/services`, `/guarantees`, `/brands`, `/areas`, `/topics` | Code | Each list with counts, filters and a plain hierarchy to walk | Yes |
-| **Company** | `/companies/<name>` | Code, from the record | One argument, top to bottom: the promise and a real photo, reviews, offers, guarantees, services, work, people, the request, then where and the details. Cards stay one glance long, "Terms apply" links out where a record holds conditions, and the page's sources sit together at its foot; a section with nothing to say is left out | With enough real data |
+| **Company** | `/companies/<name>` | Code, from the record | One argument, top to bottom: the promise and a real photo, reviews, offers, guarantees, services, work, people, the request, then where and the details. Cards stay short, "Terms apply" links out where a record holds conditions, and the page's sources are listed together at its foot; a section with nothing to say is left out | With enough real data |
 | **Offer list** | `/offers`, `/offers/<kind>` | Code | Offers running now, filterable by service, kind, area, source and ending soon | Yes, while it has live offers |
 | **Service** | `/services/<name>` | AI and code | The deep dive: what usually comes with it, what is normal, what to ask, then live statistics and who offers it | Once it passes the publish gate |
 | **Guarantee kind** | `/guarantees/<kind>` | Code, with an AI intro | Who offers it, the usual length, who goes further, how the terms compare | Once it passes the publish gate |
@@ -424,11 +424,11 @@ a phone layout, and the text stays.
   scheme other than web, mail or phone goes nowhere, and names lose their angle brackets. `npm run check` fails on anything
   that slips by.
 - **A Worker and the project's database for the correction form and quote requests.** Reader events or a much larger area would be next.
-- **A company page sells, truthfully.** It is laid out like a focused sales page, so a reader sees why to pick this company and how to ask.
-  The honesty rules hold it up: stars only from a platform's real number, a "free" only where the company says so, a headline and
-  checkmarks only as a quote backs them (`pitch`, traced by `check-record.mjs`), a named person only beside a picture that names them. Records still hold every condition and quote; pages show them only where they earn their place. `npm run check` runs `tropes` over the templates and what the AI wrote for a page. The review band shows
+- **A company page is a sales page where every claim is true.** A reader sees why to pick this company and how to ask.
+  The rules: stars only from a platform's real number, a "free" only where the company says so, a headline and
+  checkmarks only as a quote backs them (`pitch`, traced by `check-record.mjs`), a named person only beside a picture that names them. Records still hold every condition and quote; a page shows only the ones a reader needs there. `npm run check` runs `tropes` over the templates and what the AI wrote for a page. The review band shows
   4 and 5 star reviews and says so, with a link to all of them. A complaint shows only as a real trend: 5 or more reviews, at least 5% of those read, from at
-  least 50 read. Google's API gives 5 reviews a company, so without a full review source no complaint shows, and one unhappy customer never speaks for 1,800.
+  least 50 read. Google's API gives 5 reviews a company, so no complaint shows without a full review source. One unhappy review out of 1,800 never shows as a complaint.
 - **Google's terms are unsettled for production.** Google's Places policies require crediting each photo's author and linking each photo and review to Google Maps, and a photo's name can't be cached. As far as checked, the Service Terms cache only coordinates (30 days) and place IDs, and keep Places content to a Google map, while this site builds static pages and draws on OpenFreeMap. So ratings, reviews and photos from Google are fine in a local sample, and need a person to read those terms, and likely a change, before publishing. `images.mjs google` is a fallback for a company with fewer than 6 real pictures of its own, and a page keeps to the rating, the count and a few quotes. Map points come from Overture and ZIP codes from the Census, so neither depends on Google.
 - **A record's lists are for a reader.** An offer is one deal a customer could ask for, however many pages repeat it, titled in about 6 words; `check-record.mjs` refuses more than 12, or a title over 10 words. Guarantees keep every sentence in the record, and `src/guarantees.ts` merges them by kind into one card with lines. Kinds in `fields.yaml` are filters and differ by niche; nothing in the code knows any one of them.
 - **The first photo has a person in it** when a saved description says one is there, and never a close-up if anything else will do, all from the words the AI saved.
@@ -466,7 +466,7 @@ a phone layout, and the text stays.
 
 ## On the machine
 
-The app lives on its sprite, like every Starter App. The repository is the app, cloned to `~/app`. Dev is the `web` service on the team
+The app runs on its sprite, like every Starter App. The repository is the app, cloned to `~/app`. Dev is the `web` service on the team
 address. Production is `npm run deploy`, and only a person can make it public.
 
 ### Scripts
@@ -488,7 +488,7 @@ Behind them: `lib.mjs` (files, the CSV, the lock, the bridge), `merge.mjs`, `gat
 ### Skills
 
 Codex is the agent we build on. Skills live in `.claude/skills/`, and each turn links them so Codex and Claude Code both see them. Each stays
-short and holds only what takes judgment, written with the `agent-instructions` skill and compared against a bare prompt so it earns its place.
+short and holds only what takes judgment. It is written with the `agent-instructions` skill and tested against a bare prompt.
 
 | Skill | When | What it covers |
 |---|---|---|

@@ -20,7 +20,7 @@ Hono templates pre-rendered to static HTML from `data/`, served from Cloudflare,
 Rules the pages keep, which `npm run check` tests:
 
 - Code counts. A number on a page comes from `data/`. Never write one into a template.
-- A company page sells, and every claim on it is true: stars only from a platform's number, "free" only where the company says it, a named person only beside a picture that names them. Cards stay one glance long: "Terms apply" links out where a record holds conditions, and sources sit together at the page's foot. A section with nothing to say is left out; in a comparison a blank reads "not stated", never "no".
+- A company page is a sales page where every claim is true: stars only from a platform's number, "free" only where the company says it, a named person only beside a picture that names them. Cards stay short: "Terms apply" links out where a record holds conditions, and the sources are listed together at the page's foot. A section with nothing to say is left out; in a comparison a blank reads "not stated", never "no".
 - Copy is plain labels and plain benefits. A cold read against `.claude/skills/tropes/references/copy.md` catches what the script can't, such as "what they actually state".
 - A rating stays its platform's; there is no score of ours and no review markup. The review band says when it shows only 4 and 5 stars. A complaint shows only as a trend: 5 or more reviews, 5% of those read, from 50 or more read.
 - The default order is companies with a current offer first, then the rest, each by name. Other sorts are named where they are chosen. A best-of page orders by its method line (the `seo` skill); nothing else raises a company.

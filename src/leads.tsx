@@ -35,7 +35,7 @@ async function pass(c: Context, db: Db, id: number, to: Listing, sub: { name: st
       to: [to.email as string],
       replyTo: sub.email,
       subject: `A quote request for ${to.name}, from ${site.name}`,
-      text: `Someone looking at your listing on ${site.name} asked you for a quote. Please reply to them directly.\n\n${request}\n\n${site.name} is an independent guide. We don't charge for this. If this is the wrong address, or you'd rather not get these, tell us: ${site.url}/correct`,
+      text: `Someone looking at your listing on ${site.name} asked you for a quote. Please reply to them directly.\n\n${request}\n\n${site.name} is an independent guide. We don't charge for this. If this is the wrong address, or you'd rather not get these, tell us: ${site.url}/contact`,
     });
     said = sent.status === "sent" ? `Sent to ${to.email}` : `Not sent to ${to.email}: ${sent.status === "none" ? sent.why : sent.error.slice(0, 120)}`;
   }

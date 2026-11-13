@@ -50,7 +50,7 @@ When: the offer pillar, at most one pin in five. A pin that leads to the service
 Structure: the outcome as the overlay, the work as the image, the service and area in the description, a link to the service page.
 Copy: title "Fitted kitchens made in Bristol". Description: "Workshop-made kitchens measured and fitted by the same joiner. Eight weeks from signed drawing to fit day. Book a design visit on the page." Overlay: "Measured by the joiner who fits it".
 Visual: the workshop bench with a kitchen carcass on it, or a fitted kitchen with the maker in it.
-Pitfalls: a price on the pin that will go stale, a discount with a deadline (pins live for years), a graphic with no photo.
+Pitfalls: a price on the pin that will go stale, a discount with a deadline (people find pins for years), a graphic with no photo.
 
 ## Never
 

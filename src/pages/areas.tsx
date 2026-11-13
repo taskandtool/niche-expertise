@@ -58,7 +58,7 @@ export function areaPage(d: Data, a: Area) {
       ) : null}
       <Band class="mt-6"><CompanyMap area={a.path} /></Band>
       {based.length ? <Section heading={`Every company based in ${a.name}`}><Rows companies={based} /></Section> : null}
-      {serves.length ? <Section heading={`Also serve ${a.name}`}><Rows companies={serves} /></Section> : null}
+      {serves.length ? <Section heading={`Based elsewhere and serving ${a.name}`}><Rows companies={serves} /></Section> : null}
     </div>
   );
   return { page, Body };

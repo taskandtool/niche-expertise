@@ -208,7 +208,7 @@ export function alternativesPage(d: Data, x: Alternatives) {
     <div data-pagefind-body>
       <PageHead page={page} lede={lede} />
       <Band><p class="max-w-content text-label text-ink-3">In rating order, weighted toward companies with more reviews. Updated {month(x.updated)}.</p></Band>
-      <Section heading="Who beats it, and on what">
+      <Section heading="Where each one is ahead">
         <ol class="grid gap-3">
           {rows.map(({ c: y, why }) => (
             <li class="relative rounded-card border border-line bg-surface p-4 shadow-card sm:p-5">

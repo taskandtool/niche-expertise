@@ -63,7 +63,7 @@ Pitfalls: misleading angles, any health or beauty claim, a client's home without
 ### Behind the scenes / day in the life
 When: weekly. The behind-the-scenes pillar.
 Structure: a Reel or 3 to 5 slides of the unglamorous middle of the work. Starts on a specific moment, ends with what the customer gets.
-Copy: "6:40am and the second delivery of ply did not come. Sam cut the carcasses from what we had and I rang the merchant. By four the base units were up. The customer gets a kitchen on the date on the drawing. She does not see this bit, which is the point."
+Copy: "6:40am and the second delivery of ply did not come. Sam cut the carcasses from what we had and I rang the merchant. By four the base units were up. The customer gets a kitchen on the date on the drawing. She does not see this bit."
 Visual: phone-shot, natural light, hands and tools, no set dressing.
 Pitfalls: over-polishing, "busy day!" captions with nothing in them.
 

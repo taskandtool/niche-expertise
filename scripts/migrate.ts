@@ -73,7 +73,7 @@ if (basename(process.argv[1] ?? "") === "migrate.ts" && resolve(process.argv[1]!
 Sets up the contact form's tables on the project database, and the form the
 first time. Safe to re-run. Prints what it did. Without a database it says so and exits 0.`, { tryHelp: "npm run migrate -- --help" });
   if (!url()) {
-    done("migrate", "no database yet, so the contact form waits", { lines: ["The form page says where to write until then."], next: askForDatabase() });
+    done("migrate", "no database yet: the contact form is off until there is one", { lines: ["The form page says where to write until then."], next: askForDatabase() });
   } else {
     await withDb(async () => undefined).catch((e: unknown) => fail(`migrate: ${e instanceof Error ? e.message : String(e)}`, "npm run migrate, once the database answers"));
     done("migrate", "the contact form's tables are in place", { next: "node scripts/forms.mjs list" });

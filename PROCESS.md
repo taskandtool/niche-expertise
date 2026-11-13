@@ -138,7 +138,7 @@ anything unsupported by the data, and adds links between related guides.
 3. The owner makes it public, starting with the strongest pages in search.
 4. Forwarding quote requests is a separate yes from the owner: it emails businesses that never signed up. It needs Resend or Postmark
    (`NOTIFY_VIA`, `NOTIFY_FROM`), then `forward_leads: true` in `SITE.md` and a deploy. Read requests with `node scripts/forms.mjs submissions --form quote`.
-4. Submit the sitemap in Search Console.
+5. Submit the sitemap in Search Console.
 
 ## Part 2: Keeping it up to date
 
@@ -149,8 +149,7 @@ The "Refresh offers" job checks ads and recent posts, monthly or weekly as the o
 1. New material queues that company, and a fresh run updates its offers.
 2. An ad no longer running, or a post-only offer past its date, is retired by code.
 
-The daily "Rebuild data" job retires offers past their end date, with no AI and no spending. If the owner agreed to automatic deploys, it deploys when something changed.
-Otherwise, it posts an activity line, and the owner asks for the deploy in chat.
+The daily "Rebuild data" job retires offers past their end date, with no AI and no spending. It never deploys: the owner asks for each deploy in chat.
 
 ### Everything else
 

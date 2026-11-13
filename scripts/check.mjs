@@ -120,7 +120,7 @@ for (const [path, html] of pages) {
   if (/<[a-z]+\b[^>]*\son[a-z]+\s*=/i.test(html)) add("safety", path, "has an inline event handler");
   if (/<(iframe|object|embed)\b/i.test(html)) add("safety", path, "embeds outside content");
   for (const [, attrs, body] of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
-    const known = /type="application\/ld\+json"/.test(attrs) || /src="\/site\.js"/.test(attrs) || (path === "/correct" && !attrs.trim());
+    const known = /type="application\/ld\+json"/.test(attrs) || /src="\/site\.js"/.test(attrs);
     if (!known) add("safety", path, `has a script that is not ours: ${(attrs + body).slice(0, 60)}`);
   }
 }

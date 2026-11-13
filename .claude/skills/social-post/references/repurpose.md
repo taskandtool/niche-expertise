@@ -45,7 +45,7 @@ The idea for the worked example: "Three mistakes people make when they get a kit
 
 Rules the example follows:
 - Each version is written again, not copied. The carousel is the long form; everything else is a cut of it.
-- The link lives in one place per platform: bio on Instagram, first comment on LinkedIn and Facebook, the button on GBP, native on Pinterest, nowhere on TikTok.
+- The link goes in one place per platform: bio on Instagram, first comment on LinkedIn and Facebook, the button on GBP, native on Pinterest, nowhere on TikTok.
 - Post them across the week, not on the same day, so each platform's audience gets the idea once.
 - Anything that comes back as a comment or reply is next week's idea.
 

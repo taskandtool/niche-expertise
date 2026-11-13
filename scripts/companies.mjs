@@ -70,7 +70,7 @@ function parseBbox(s) {
 function overture(type, bbox, out) {
   if (!hasCommand("overturemaps")) fail("companies: the overturemaps command is not installed", "bash .taskandtool/after-setup.sh");
   const r = spawnSync("overturemaps", ["download", `--bbox=${bbox.join(",")}`, "-f", "geojson", `--type=${type}`, "-o", out], { encoding: "utf8" });
-  if (r.status !== 0) fail(`companies: Overture's ${type} download failed\n  ${(r.stderr || "").trim().split("\n").pop()}`, "run it again; it is free and nothing was lost");
+  if (r.status !== 0) fail(`companies: Overture's ${type} download failed\n  ${(r.stderr || "").trim().split("\n").pop()}`, "run it again; the download is free");
 }
 
 /** The Census's ZIP files, once. The site works without them. */

@@ -324,7 +324,7 @@ function RequestBand({ c }: { c: Company }) {
       <div class="mx-auto grid max-w-wide gap-x-16 gap-y-8 px-5 sm:px-8 lg:grid-cols-[1fr_1.1fr] lg:grid-rows-[auto_1fr]">
         <div>
           <h2 id="request-heading" class="font-display text-section">{free ? `Get your free estimate from ${c.name}` : `Ask ${c.name} for a quote`}</h2>
-          <p class="mt-3 text-lede text-night-ink-2">It takes a minute, and they reply to you directly.</p>
+          <p class="mt-3 text-lede text-night-ink-2">They reply to you directly.</p>
         </div>
         <form method="post" action={`/request/${c.slug}`} data-lead-form class="rounded-card bg-surface p-6 text-ink shadow-lift sm:p-8 lg:col-start-2 lg:row-span-2 lg:row-start-1">
           <SpamFields stamp="" />
@@ -377,7 +377,7 @@ function ReviewThemes({ c }: { c: Company }) {
     <section aria-labelledby="themes" class="py-section">
       <Band>
         <SectionHead id="themes" heading="What customers mention" />
-        <div class={`mx-auto mt-8 grid max-w-4xl gap-8 ${c.reviews.praise.length && c.reviews.complaints.length ? "md:grid-cols-2" : "max-w-xl"}`}><Col label="What they like" list={c.reviews.praise} /><Col label="What some raise" list={c.reviews.complaints} /></div>
+        <div class={`mx-auto mt-8 grid max-w-4xl gap-8 ${c.reviews.praise.length && c.reviews.complaints.length ? "md:grid-cols-2" : "max-w-xl"}`}><Col label="What they like" list={c.reviews.praise} /><Col label="What some complained about" list={c.reviews.complaints} /></div>
         {all?.url ? <p class="mt-8 text-center"><a href={all.url} rel="nofollow noopener" class="font-semibold">Read all {all.count != null ? `${all.count.toLocaleString("en-US")} ` : ""}reviews on {all.platform}</a></p> : null}
       </Band>
     </section>
@@ -431,7 +431,7 @@ function Sources({ c }: { c: Company }) {
       <p class="mx-auto mt-2 max-w-3xl text-label text-ink-3">Is this your business? <a href={`/contact?company=${encodeURIComponent(c.name)}&ask=claim`} class="font-semibold text-accent underline">Claim this listing</a></p>
       <details class="mx-auto mt-2 max-w-3xl text-label text-ink-3">
         <summary class="cursor-pointer select-none hover:text-ink">Where this comes from</summary>
-        <p class="mt-2 font-normal">From {c.name}'s website and public reviews{c.crawled ? `, read ${day(c.crawled)}` : ""}. We haven't verified it, and their own terms decide what a guarantee or offer covers.</p>
+        <p class="mt-2 font-normal">From {c.name}'s website and public reviews{c.crawled ? `, read ${day(c.crawled)}` : ""}. We haven't verified it. Check their terms for what a guarantee or offer covers.</p>
         {urls.length ? <ul class="mt-2 space-y-1 font-normal">{urls.slice(0, 20).map((u) => <li class="break-all"><a href={u} rel="nofollow noopener" class="underline">{u.replace(/^https?:\/\/(www\.)?/, "")}</a></li>)}</ul> : null}
       </details>
     </Band>

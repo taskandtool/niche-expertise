@@ -17,7 +17,7 @@ export function home(d: Data) {
     !d.ready ? (
       <Band class="py-section">
         <h1 class="font-display text-display">{site.name}</h1>
-        <p class="mt-3 max-w-content text-lede text-ink-2">Nothing has been read yet. Tell the AI which businesses this site is for, and the pages build themselves from what it finds.</p>
+        <p class="mt-3 max-w-content text-lede text-ink-2">Nothing has been read yet. Tell the AI which businesses this site is for, and it builds the pages from what it finds.</p>
       </Band>
     ) : (
       <>
@@ -149,7 +149,7 @@ export function about(d: Data) {
           <h2>How companies are listed</h2>
           <p>Best-of lists put companies based in the area first, then rank by Google rating, favouring companies with more reviews. Other lists show current offers first. Nobody pays for a place.{site.disclosure ? ` ${site.disclosure}` : ""} Updated {day(d.stats.built) || "with each build"}.</p>
           <h2>Before you hire</h2>
-          <p>Every page comes from what the company publishes and what its customers say. Guarantees and offers are each company's own, so check the details with them before you hire.</p>
+          <p>Every page comes from what the company publishes and what its customers say. Guarantees and offers are each company's own. Check the details with them before you hire.</p>
           <h2>Claim or correct a listing</h2>
           <p>Businesses can <a href="/contact">claim a listing, ask for a correction or a removal, or have a picture taken down</a>.{site.contactEmail ? <> Or write to <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</> : null}</p>
           <p class="text-label text-ink-2">Business locations from Overture Maps. Boundaries and map data © OpenStreetMap contributors, under the Open Database License; maps by OpenFreeMap.</p>
