@@ -6,7 +6,7 @@ description: "Reads one equipment brand's gathered pages into records/brands/<br
 # Read one brand
 
 Done when `records/brands/<brand>.md` exists and `node scripts/brands.mjs check <brand>`
-passes. Then `node scripts/build-data.mjs` puts it on the brand page.
+passes. Then run `node scripts/build-data.mjs` to put it on the brand page.
 
 Read `raw/brands/<brand>/site/pages/` and any converted documents (the maker's own
 warranty pages), then `raw/brands/<brand>/search/reviews.md` and `news.md`.
@@ -26,14 +26,16 @@ news:
 ---
 ```
 
-- **Warranty terms are the maker's, from its own pages,** each with a short exact quote and
-  the page it's on. `covers` is the part in plain words; `length` as the page states it;
-  `condition` only where the page sets one. What a warranty costs extra is a condition.
-- **Default terms first.** A term that needs registration says so in `condition`, and the
-  unregistered term is its own line when the page gives it.
-- **Reviews and news are links, picked from the searches, never the maker's own pages,
-  forums or ads.** Up to 4 of each: independent reviews that test or compare the
-  equipment, and news a buyer would care about (a recall, a new line, a warranty change).
-  Copy each title exactly as the search shows it. Leave a list out rather than pad it.
-- Labor coverage the maker sells is a warranty line; labor an installer gives is theirs
-  and stays on the company's record.
+- **Take warranty terms only from the maker's own pages.** Give each a short exact quote
+  and the page it's on. `covers` is the part in plain words; `length` is as the page states
+  it; `condition` is there only where the page sets one. If a warranty costs extra, the
+  cost is a condition.
+- **List the default terms first.** If a term needs registration, say so in `condition`.
+  If the page gives the unregistered term, add it as its own line.
+- **Pick reviews and news links from the searches only,** never from the maker's own pages,
+  forums or ads. Up to 4 of each: independent reviews that test or compare the equipment,
+  and news a buyer would care about (a recall, a new line, a warranty change). Copy each
+  title exactly as the search shows it. If too few qualify, leave the list out rather than
+  pad it.
+- Labor coverage the maker sells is a warranty line. Labor coverage an installer gives
+  goes on that company's record.

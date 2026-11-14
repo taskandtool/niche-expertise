@@ -19,9 +19,9 @@ Read when a company has something the SKILL.md example doesn't show.
 | `details` | `name` from `fields.yaml`'s details, `value`, `quote`, `url` |
 | `keywords` | Phrases that matter here that the company itself uses |
 | `testimonials` | `quote`, `who`, `url`: from its own site, chosen by the company |
-| `reviews` | `praise`, `complaints`: `theme`, `quote`, `source`, `words` (the words a review of this theme uses, which code counts). `services`: `name`, `words` |
-| `media` | `file` under `raw/<company>/`, `kind`, `alt`, `url` of the page it sat on |
+| `reviews` | `praise`, `complaints`: `theme`, `quote`, `source`, `words` (the words reviews on this theme use; code counts them). `services`: `name`, `words` |
+| `media` | `file` under `raw/<company>/`, `kind`, `alt`, `url` of the page it was on |
 
 `source` on an offer is `site`, `facebook_post`, `instagram_post`, `facebook_ad`, `google_ad` or `review`.
 `corrected: YYYY-MM-DD` on an item marks what the business itself corrected: it needs no quote, and stays through re-reads.
-A kind that isn't listed is `other`, and `tidy-names` takes it to the owner.
+A kind that isn't listed is `other`; raise it with the owner through `tidy-names`.

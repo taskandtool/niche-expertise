@@ -10,14 +10,14 @@ sources:
 
 # X organic posts
 
-A text-first platform. For a one-person business it is optional: post only if it costs nothing, otherwise skip it. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in examples are illustrative; a real post takes its figures from `claims.md`.
+A text-first platform. For a one-person business it is optional: post only if it costs nothing, otherwise skip it. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in the examples are made up. Take a real post's figures from `claims.md`.
 
 ## What performs
 
 - Weights (via Sprout): a reply is worth about 13.5 likes, a repost about 20, a bookmark about 10. Links cut reach by "50-90%" (Musk, via Sprout). A post loses half its visibility every six hours. Media beats plain text.
 - Hootsuite: posts under 100 characters get about 17% more engagement; quote posts get about twice the engagement of plain reposts.
 - Threads (Buffer): only for multi-step content. The first post must stand alone; number the rest.
-- Sprout and Hootsuite for small businesses: one-line observations, a photo of the work, replies to local accounts. Two or three posts a day only if free; otherwise skip.
+- Sprout and Hootsuite for small businesses: one-line observations, a photo of the work, replies to local accounts.
 
 ## Norms
 
@@ -33,19 +33,19 @@ A text-first platform. For a one-person business it is optional: post only if it
 ### One-line observation
 When: something from the day's work that a homeowner or another trade would recognise.
 Structure: one sentence, under 100 characters. No tag.
-Copy: "Every 'straight' wall we measured this month was out by 8 to 14 mm. The kitchen has to be cut to that, not to the drawing."
+Copy: "Every 'straight' wall we measured this month was out by 8 to 14 mm."
 Visual: none, or one phone photo of the tape on the wall.
 Pitfalls: a moral attached to the observation, a question added to farm replies.
 
 ### Photo of the work
 When: a finished detail, a stage of a build, a tool in use. Media beats text.
 Structure: one photo, one line, alt text.
-Copy: "Scribed end panel meeting a 1900s wall in Redland. The gap you cannot see took two hours." Alt text: "An oak kitchen end panel fitted flush to an uneven plaster wall."
+Copy: "Scribed end panel against a 1900s wall in Redland. Two hours to get it this tight." Alt text: "An oak kitchen end panel fitted flush to an uneven plaster wall."
 Visual: a single phone photo, cropped tight on the detail.
 Pitfalls: four photos where one would do, a watermark, a stock shot.
 
 ### Reply to a local account
-When: daily if you are on X at all. This is where a small account's reach comes from.
+When: daily if you are on X at all. Most of a small account's reach comes from replies.
 Structure: a useful reply to a local business, a neighbourhood account or a homeowner asking a question. No pitch.
 Copy: replying to a Bristol homeowner asking about kitchen timelines: "Eight weeks from signed drawing to fit is realistic for a workshop-made kitchen. Anything under six usually means the units are stock and cut down on site."
 Visual: none.

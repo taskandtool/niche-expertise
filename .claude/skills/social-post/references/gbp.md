@@ -11,7 +11,7 @@ sources:
 
 # Google Business Profile posts
 
-Recipes for the three post types on a Business Profile: Updates, Offers and Events. GBP posts show on the business's Google listing and in Maps, to people already searching for the service in the area. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in examples are illustrative; a real post takes its figures from `claims.md`.
+Recipes for the three post types on a Business Profile: Updates, Offers and Events. GBP posts show on the business's Google listing and in Maps, to people already searching for the service in the area. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in the examples are made up. Take a real post's figures from `claims.md`.
 
 ## What performs
 
@@ -27,7 +27,7 @@ Recipes for the three post types on a Business Profile: Updates, Offers and Even
 - Google's content rules: no misspellings, no auto-generated text, no phone numbers in the copy. Use the button for calls.
 - Photos: JPG or PNG, 10 KB to 5 MB, 720 x 720 recommended, 250 x 250 minimum, "in focus and well lit" with "no significant alterations". Video: 30 seconds or under, 75 MB or under, 720p or better.
 - Hooks: the service and the area in the first line. People reading this are already searching for it.
-- Hashtags: none. Links: the button only. Alt text: no field; the description carries the words.
+- Hashtags: none. Links: the button only. Alt text: there is no field. Put the words in the description.
 - Cadence for one person: one Update a week. An Offer or Event whenever there is a real one. Photos added to the Profile as jobs finish, separately from posts.
 - Keep hours, address, services and the Q&A section current. Reply to every review.
 
@@ -36,7 +36,7 @@ Recipes for the three post types on a Business Profile: Updates, Offers and Even
 ### Update
 When: weekly. A finished job, a service explained, a piece of news.
 Structure: one custom photo, a title-style first line, two or three sentences naming the service and the area, a "Learn more" or "Call now" button to the matching page.
-Copy: "Alcove kitchen fitted in Redland. A workshop-made oak kitchen built into a chimney alcove, measured and fitted by the same joiner. We make fitted kitchens for homes across Bristol and North Somerset. Button: Learn more (the project page)."
+Copy: "Alcove kitchen fitted in Redland. We built this oak kitchen in our workshop to fit a chimney alcove. The same joiner measured and fitted it. We make fitted kitchens for homes across Bristol and North Somerset. Button: Learn more (the project page)."
 Visual: one phone photo of the finished job, 720 x 720 or larger, no text overlay, no logo.
 Pitfalls: a stock photo, a keyword-stuffed first line ("Fitted kitchens Bristol kitchen fitters Bristol"), a phone number in the text, a link pasted into the description.
 

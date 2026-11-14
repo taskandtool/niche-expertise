@@ -12,12 +12,12 @@ sources:
 
 # Facebook Page organic posts
 
-Recipes for a business Page. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in examples are illustrative; a real post takes its figures from `claims.md`.
+Recipes for a business Page. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in the examples are made up. Take a real post's figures from `claims.md`.
 
 ## What performs
 
 - Reach rate by format (Socialinsider, Aug 2026, 872k posts): images 1.20%, albums 1.15%, status or text 0.80%, Reels 0.55%, links 0.20%. Hootsuite (Feb 2025): albums lead engagement at 1.6%.
-- So: photos and albums first, plain text for conversation, Reels for reach beyond followers, links almost never in the body.
+- Lead with photos and albums. Use plain text for conversation and Reels for reach beyond followers. Links almost never go in the body.
 - Links: Buffer (Jun 2026): "97.3% of all post views on Facebook in the US go to updates that don't include a link to a source outside of the app". Buffer's advice: "try dropping the link in the first comment."
 - Length: Hootsuite: "Posts with 80 characters or fewer receive 66% higher engagement".
 - Ranking (Meta transparency centre): likes and comments as totals and as a ratio to views, content type, originality ("the percentage of identical content between this post and other posts"), and predicted angry reactions and reports, which demote. Engagement bait such as "tag a friend" and "like if" is demoted (Meta, Hootsuite).
@@ -50,7 +50,7 @@ Visual: photos in the order the job happened, the finished kitchen as the cover.
 Pitfalls: ten near-identical shots, no people, the client not asked.
 
 ### Text-only question or announcement
-When: when there is one specific local question, or news with no photo yet. Conversation, not reach.
+When: there is one specific local question, or news with no photo yet. Use it for conversation. Text posts get little reach.
 Structure: one or two lines, no image, no link.
 Copy: "Fitting in Southville next week. Anyone on the Cotswold Road side who has parking permits, how strict is the warden on trade vans?"
 Visual: none.
@@ -73,7 +73,7 @@ Pitfalls: urgency stacking, a discount every week, a link in the body.
 ### Review share
 When: every review, on Facebook or elsewhere.
 Structure: a screenshot of the review, thanks by name, one line of story.
-Copy: "'The drawing was the kitchen. Nothing changed on fit day.' Thank you, Ruth. Fitted 14 August, the date we put on the drawing in June."
+Copy: "'The drawing was the kitchen. Nothing changed on fit day.' Thank you, Ruth. We fitted it on 14 August, the date we put on the drawing in June."
 Visual: the real screenshot with the platform name visible.
 Pitfalls: editing the review, a run of reviews with nothing else between them.
 

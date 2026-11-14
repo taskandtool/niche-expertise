@@ -10,14 +10,14 @@ sources:
 
 # TikTok organic posts
 
-Recipes for a small business account. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in examples are illustrative; a real post takes its figures from `claims.md`.
+Recipes for a small business account. The worked examples use Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in the examples are made up. Take a real post's figures from `claims.md`.
 
 ## What performs
 
 - Ranking order (Hootsuite, Sprout): user interactions (likes, shares, comments, watch time, follows) first, then content information (captions, hashtags, sounds), then user and device settings. Follower count does not drive search or the For You feed.
 - Sprout, quoting TikTok: "High-quality content sees follower growth over 40 times greater than with other posts". Sprout relays TikTok's Creator Academy advice to post one to four times a day when testing; this is not verified at the source.
 - Search is the growth path for a small account. Hootsuite: "TikTok's algorithm also processes spoken audio", so the keyword said aloud counts as well as the on-screen title and the caption.
-- Shares and watch time decide reach: a video one person sends on beats one ten people like.
+- Shares and watch time decide reach. TikTok ranks a video one person sends on above one that ten people like.
 - Content pillars that work for small businesses (Sprout, Nov 2025): educational ("quick how-to, a creator demo or a funny take on a customer pain point"), behind the scenes ("A day in the life of a florist during wedding season"), trend participation (early, with your own twist), customer stories (testimonials, before and afters, UGC with a voiceover).
 
 ## Norms
@@ -26,7 +26,7 @@ Recipes for a small business account. The worked examples use Harlow Joinery, a 
 - Hashtags: three to five, "at least one containing your keyword verbatim" (Sprout). Hashtag-only captions are a tell.
 - The keyword in the on-screen title in the first second, and said aloud in the first sentence. Auto-captions on.
 - Links: only the profile link. Never in the caption.
-- Alt text: TikTok's photo posts take it; write one literal sentence. For video, the on-screen title and the caption do the job.
+- Alt text: TikTok's photo posts take it; write one literal sentence. For video, the on-screen title and the caption are enough.
 - Cadence for one person: three videos a week if video is cheap for you, otherwise skip TikTok and post the same Reels on Instagram. Reply to comments with a video when a comment asks a real question.
 
 ## Recipes
@@ -35,7 +35,7 @@ Recipes for a small business account. The worked examples use Harlow Joinery, a 
 When: the education pillar, two of the week's three videos.
 Structure: on-screen title is the search phrase. The answer starts in the first three seconds. One tip per video. 30 to 60 seconds.
 Copy: caption is the title plus the series marker plus tags. "Why a solid wood kitchen door warps, part 1 of 3. A frame-and-panel door does not. #fittedkitchens #kitchenrenovation #joinery #bristol"
-Spoken first line: "Why solid wood kitchen doors warp, and the one kind that does not."
+Spoken first line: "Why solid wood kitchen doors warp, and the one kind that doesn't."
 Visual: Jo at the bench holding the two doors, phone on a tripod, natural light, captions on.
 Pitfalls: an intro before the answer, three tips in one video, polished ad footage.
 

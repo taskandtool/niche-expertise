@@ -12,7 +12,7 @@ sources:
 
 # Repurposing: one idea across the platforms
 
-The method the agent uses to turn one idea into a week of posts without cross-posting. Read this before the platform files; it decides what gets made, and the platform files decide how. The worked example uses Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in examples are illustrative; a real post takes its figures from `claims.md`.
+How to turn one idea into a week of posts without cross-posting. Read this before the platform files. Use it to choose what to make, and the platform files for how to make it. The worked example uses Harlow Joinery, a made-up workshop in Bristol that makes fitted kitchens, run by Jo and Sam. Numbers in the examples are made up. Take a real post's figures from `claims.md`.
 
 ## The five pillars
 
@@ -26,7 +26,7 @@ Sprout recommends three to five content pillars. For a small business these five
 | Offer | Something to buy or book, with a deadline | design visit, seasonal slot, package |
 | Community | The people around the business | UGC reposts, local replies, event recaps, thanks |
 
-Weekly ratio for one person: about 2 education : 1 proof : 1 behind the scenes : 1 offer at most, with community running continuously as replies, reshares and comments rather than as scheduled posts. No more than one post in five is an offer, on any platform.
+Weekly ratio for one person: about 2 education : 1 proof : 1 behind the scenes : 1 offer at most. Community is not scheduled. It is the replies, reshares and comments all week. No more than one post in five is an offer, on any platform.
 
 ## One idea, five posts
 
@@ -36,18 +36,18 @@ The idea for the worked example: "Three mistakes people make when they get a kit
 
 | Post | Platform and format | What changes | The post |
 |---|---|---|---|
-| 1 | Instagram educational carousel, 7 slides, 4:5 | Built for saves. Slide 1 the hook, one mistake per slide with the fix, last slide "Save this". | Slide 1: "3 kitchen quote mistakes". Slides 2 to 7: mistake, then fix. Caption: "3 mistakes people make when they get a kitchen quote. Number 2 is the one nobody spots: the person who measures is never the person who fits. Save this for when the quotes come in. Send it to someone planning a kitchen. #fittedkitchens #bristolkitchens #kitchenrenovation" |
+| 1 | Instagram educational carousel, 7 slides, 4:5 | Built for saves. Slide 1 the hook, one mistake per slide with the fix, last slide "Save this". | Slide 1: "3 kitchen quote mistakes". Slides 2 to 7: mistake, then fix. Caption: "3 mistakes people make when they get a kitchen quote. Number 2 is the one nobody spots: the person who measures is never the person who fits. Save this for when the quotes come in. #fittedkitchens #bristolkitchens #kitchenrenovation" |
 | 2 | Reel and TikTok, 40 seconds | One mistake only, the search phrase on screen in the first second and said aloud. | On-screen title: "Kitchen quote mistake no. 2". Spoken: "The biggest kitchen quote mistake: the person who measured your room is not the person who fits it." Jo holds the tape on a wall 12 mm out. Caption: "Kitchen quote mistake no. 2, part 1 of 3. #fittedkitchens #kitchenrenovation #joinery #bristol" |
-| 3 | LinkedIn text post from Jo's profile | Dwell time. One client anecdote, a decision, a takeaway. Link to the checklist in the first comment. | "A customer showed me three kitchen quotes last week. Three prices, three different kitchens, and nobody had measured her room. Her wall was 12 mm out at the alcove. Two of the three quotes would have changed on fit day. What we do: the survey is the first visit and the quote comes from the drawing. If you are a fitter and you quote before you measure, I would like to know how you keep the number." |
-| 4 | Facebook photo post | Comments. The shortest version, one real photo, a question. | Photo: the tape on the wall. "Three kitchen quotes, none of them measured the room. This wall in Redland is 12 mm out. Did anyone measure yours before quoting?" |
-| 5 | GBP Update | Clicks. Service and area in the first line, a button. | "Kitchen quotes measured in your home, Bristol. Every Harlow quote comes from a measured drawing of your room, because walls are never straight. Fitted kitchens across Bristol and North Somerset. Button: Learn more (the how-we-quote page)." Photo: Jo with the drawing at a customer's table. |
+| 3 | LinkedIn text post from Jo's profile | Dwell time. One client anecdote, a decision, a takeaway. Link to the checklist in the first comment. | "A customer showed me three kitchen quotes last week. Three prices, three different kitchens, and nobody had measured her room. Her wall was 12 mm out at the alcove. Two of the three quotes would have changed on fit day. We survey on the first visit and quote from the drawing. If you're a fitter and you quote before you measure, I'd like to know how you hold the price." |
+| 4 | Facebook photo post | Comments. The shortest version, one real photo, a question. | Photo: the tape on the wall. "Three kitchen quotes, and nobody measured the room. This wall in Redland is 12 mm out. Did anyone measure yours before quoting?" |
+| 5 | GBP Update | Clicks. Service and area in the first line, a button. | "Kitchen quotes measured in your home, Bristol. We quote from a measured drawing of your room, because walls are never straight. Fitted kitchens across Bristol and North Somerset. Button: Learn more (the how-we-quote page)." Photo: Jo with the drawing at a customer's table. |
 | 6 (optional) | Pinterest guide pin | Search, months later. Evergreen. | Title: "How to check a kitchen quote". Overlay: "3 quote mistakes". Links to the checklist page. |
 
 Rules the example follows:
 - Each version is written again, not copied. The carousel is the long form; everything else is a cut of it.
 - The link goes in one place per platform: bio on Instagram, first comment on LinkedIn and Facebook, the button on GBP, native on Pinterest, nowhere on TikTok.
-- Post them across the week, not on the same day, so each platform's audience gets the idea once.
-- Anything that comes back as a comment or reply is next week's idea.
+- Post them on different days of the week.
+- Turn the comments and replies into next week's ideas.
 
 ## Cadence for one person
 
@@ -65,7 +65,7 @@ Total: about 10 to 13 made posts a week from two or three ideas. If that is too 
 
 ## Ad copy versus organic copy
 
-Same voice, different jobs: an ad pays for attention and asks for the sale; an organic post earns a send and delays the sale.
+Write both in the same voice. With an ad you pay for attention and ask for the sale. With an organic post you ask for a send or a save and sell later.
 
 | Element | Ad copy | Organic copy |
 |---|---|---|
@@ -80,4 +80,4 @@ Same voice, different jobs: an ad pays for attention and asks for the sale; an o
 | Frequency | Set by budget and the test set in the `ad` skill | Set by the cadence table above |
 | Compliance | Meta's personal attributes policy, the FTC and ASA rules on claims | The same rules on claims; permission for every customer named or shown |
 
-Where the two meet: an organic post that gets sent and saved is the first candidate for a paid test. Its first frame becomes the static and its hook becomes the primary text, cut to the ad rules above.
+The first organic posts to test as ads are the ones people send and save. Use the post's first frame as the static and its hook as the primary text, cut to the ad rules above.

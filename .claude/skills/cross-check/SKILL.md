@@ -7,20 +7,26 @@ description: "Spot-checks company pages against live sources, reads guides for a
 
 Done when what you could fix is fixed and logged, and what needs a person is in one deliverable.
 
-First read the latest `raw/audit/_latest.json` and `git log`-free `log.md` tail. In the monthly job,
-stop early if nothing has changed and nothing is wrong.
+First read `raw/audit/_latest.json` and the end of `log.md`. In the monthly job, stop early if
+nothing has changed and nothing is wrong.
 
 1. **Spot-check.** Pick ten companies at random from `data/companies.json`. For each, open a few facts'
-   `url` and compare: guarantee conditions, whether an offer is current, whose a warranty is. A misread is
-   fixed in the record, and if the skill led to it, in the `read-company` skill too.
+   `url` and compare: guarantee conditions, whether an offer is current, whose a warranty is. Fix a
+   misread in the record. If the `read-company` skill led to it, fix the skill too.
 2. **Names.** The `tidy-names` skill's "After a batch".
-3. **Guides.** Read each in `content/`. Anything the data doesn't support comes out. Add links between related guides.
-4. **Missing pages.** `data/guides.json` entries with `enough: true` and no file: `node scripts/pipeline.mjs queue --pages`.
-5. **Search Console** (a connection, if held): which pages are seen, which ignored, what people search for that the
-   site doesn't answer, and where thin pages hurt. `SITE.md`'s `gate` numbers are the owner's to change.
-6. **Report.** One `python3 ~/tools/taskandtool.py post-activity` line for what changed, one deliverable for what
-   needs a person (the work skill).
+3. **Guides.** Read each guide in `content/`. Cut anything the data doesn't support, and add links
+   between related guides.
+4. **Missing pages.** For `data/guides.json` entries with `enough: true` and no file, run
+   `node scripts/pipeline.mjs queue --pages`.
+5. **Search Console**, if the connection is held: which pages people see in search and which get no
+   impressions, what people search for that no page answers, and which thin pages rank poorly. Only
+   the owner changes the `gate` numbers in `SITE.md`.
+6. **Report.** One `python3 ~/tools/taskandtool.py post-activity` line for what changed, one deliverable
+   for what needs a person (the work skill).
 
-A business's correction or removal comes in through the `contact` form: `node scripts/forms.mjs submissions --form contact`.
-A business that wants no quote requests gets `no_leads: true` in its record. A person decides each. A correction goes in the record with `corrected: YYYY-MM-DD` on the item, which keeps it through later reads
-unless the source changes. A removal: set the company's `state` to `removed` in `companies.csv`. A picture taken down: `node scripts/images.mjs hide <company> <file>`, then `images.mjs apply <company>`.
+Businesses ask for corrections and removals through the `contact` form:
+`node scripts/forms.mjs submissions --form contact`. A person decides each request. Write a
+correction into the record with `corrected: YYYY-MM-DD` on the item. It stays through later reads
+unless the source changes. For a removal, set the company's `state` to `removed` in `companies.csv`.
+If a business wants no quote requests, set `no_leads: true` in its record. To take down a picture,
+run `node scripts/images.mjs hide <company> <file>`, then `images.mjs apply <company>`.
